@@ -1,46 +1,43 @@
-import { useState } from 'react'
-import "./css/reset.css";
-import "./css/style.css";
+import React from "react";
+import styled from 'styled-components';
+import GlobalStyle from "./globalStyle";
 
-
-import logo from "./assets/logo.png";
-import seta_play from "./assets/seta_play.png"
-import seta_virar from "./assets/seta_virar.png"
+import Header from "./Header";
+import Footer from "./Footer";
+import Card from "./Card";
+import cards from "./cards";
 
 export default function App() {
 
+  const [completed, setCompleted] = React.useState(0);
+
   return (
+    <>
+  <GlobalStyle />
+  <MainSC>
 
-  <div className="main">
-    <header>
-      <img src={logo}></img>
-      <h1>ZapRecall</h1>
-    </header>
+    <Header />
 
-    <div className="question_box">
-      <div className="question">
-        <p>Pergunta 1</p>
-        <img src={seta_play}></img>
-        </div>
+    <Card 
+    setCompleted={setCompleted}
+    completed={completed}
+    />
 
-      <div className="question_back">
-        <p>O que é JSX?</p>
-        <div><img src={seta_virar}></img></div>
-      </div>
+    <Footer
+    completed={completed}
+    cards={cards}
+    />
 
-      <div className="questions_answers">
-        <p>JSX é uma sintaxe para escrever HTML dentro do JS</p>
-        <div className="answers">
-          <div className="answers_red">Não lembrei</div>
-          <div className="answers_yellow">Quase não lembrei</div>
-          <div className="answers_green">Zap!</div>
-        </div>  
-      
-      </div>
-
-    </div>
-    <footer>0/4 CONCLUÍDOS</footer>
-  </div>
-
+  </MainSC>
+  </>
   )
 }
+
+const MainSC = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  `;
