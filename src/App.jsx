@@ -1,43 +1,22 @@
 import React from "react";
-import styled from "styled-components";
-import GlobalStyle from "./globalStyle";
+import { useState } from "react";
 
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Card from "./Components/Deckscreen";
-import cards from "./Constants/cards";
+import GlobalStyle from "./globalStyle";
+import DeckScreen from "./Components/DeckScreen";
+import LoginScreen from "./Components/LoginScreen";
 
 export default function App() {
 
-  const [completed, setCompleted] = React.useState(0);
+  const [login, setLogin] = useState(true);
+
+  function changeScreen (){
+    setLogin(false)
+  }
 
   return (
     <>
-  <GlobalStyle />
-  <MainSC>
-
-    <Header />
-
-    <Card 
-    setCompleted={setCompleted}
-    completed={completed}
-    />
-
-    <Footer
-    completed={completed}
-    cards={cards}
-    />
-
-  </MainSC>
-  </>
+      <GlobalStyle />
+      {login ? <LoginScreen changeScreen={changeScreen} /> :  <DeckScreen />}
+    </>
   )
 }
-
-const MainSC = styled.main`
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  `;

@@ -9,7 +9,7 @@ import icone_erro from "./../assets/icone_erro.png"
 import cards from "../Constants/cards";
 import { GREEN , YELLOW, RED} from  "../Constants/colors";
 
-export default function Card (props){
+export default function FlashCards (props){
 
   const {setCompleted, completed} = props;
 
