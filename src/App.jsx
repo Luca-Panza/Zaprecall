@@ -1,11 +1,11 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import GlobalStyle from "./globalStyle";
 
-import Header from "./Header";
-import Footer from "./Footer";
-import Card from "./Card";
-import cards from "./cards";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Card from "./Components/Deckscreen";
+import cards from "./Constants/cards";
 
 export default function App() {
 
@@ -33,7 +33,7 @@ export default function App() {
   )
 }
 
-const MainSC = styled.div`
+const MainSC = styled.main`
   width: 100%;
   height: 100%;
 
