@@ -4,11 +4,11 @@ import styled from "styled-components";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import FlashCards from "../Components/FlashCards";
-import cards from "../Constants/cards";
 
 export default function DeckScreen() {
 
   const [completed, setCompleted] = React.useState(0);
+  const [icons, setIcons] = React.useState ([]);
 
   return (
     <>
@@ -19,11 +19,13 @@ export default function DeckScreen() {
     <FlashCards 
     setCompleted={setCompleted}
     completed={completed}
+    setIcons={setIcons}
+    icons={icons}
     />
 
     <Footer
     completed={completed}
-    cards={cards}
+    icons={icons}
     />
 
   </MainSC>

@@ -11,7 +11,7 @@ import { GREEN , YELLOW, RED} from  "../Constants/colors";
 
 export default function FlashCards (props){
 
-  const {setCompleted, completed} = props;
+  const {setCompleted, completed, setIcons, icons} = props;
 
   function turncard1 (setCondition){
     setCondition("intermediary")
@@ -23,6 +23,7 @@ export default function FlashCards (props){
 
   function turncard3 ({setCondition,setColor,color}){
     setColor(color)
+    setIcons([...icons, color])
     setCondition("final")
     setCompleted(completed + 1)
   }
@@ -39,35 +40,35 @@ export default function FlashCards (props){
           <Fragment key={i}>
             {condition === "start" && (      
               <FlashcardSC data-test="flashcard" >
-                <p data-test="flashcard-text">Pergunta {i+1}</p>
-                <img data-test="play-btn" src={seta_play} onClick={()=>turncard1(setCondition)} alt="Seta Play" />
+                <p>Pergunta {i+1}</p>
+                <img src={seta_play} onClick={()=>turncard1(setCondition)} alt="Seta Play" />
               </FlashcardSC>
             )}
   
             {condition === "intermediary" && (
               <Flashcard_backSC>
-                <p data-test="flashcard-text">{card.question}</p>
+                <p>{card.question}</p>
                 <div>
-                  <img data-test="turn-btn" src={seta_virar} onClick={()=>turncard2(setCondition)} alt="Seta virar" />
+                  <img src={seta_virar} onClick={()=>turncard2(setCondition)} alt="Seta virar" />
                 </div>
               </Flashcard_backSC>
             )}
   
             {condition === "semi-final" && (
               <Flashcard_answersSC>
-                <p data-test="flashcard-text">{card.answer}</p>
+                <p >{card.answer}</p>
                 <div>
-                  <Button_redSC data-test="no-btn" onClick={()=>turncard3({setCondition,setColor,color:RED})}>Não lembrei</Button_redSC>
-                  <Button_yellowSC data-test="partial-btn" onClick={()=>turncard3({setCondition,setColor,color:YELLOW})}>Quase não lembrei</Button_yellowSC>
-                  <Button_greenSC data-test="zap-btn" onClick={()=>turncard3({setCondition,setColor,color:GREEN})}>Zap!</Button_greenSC>
+                  <Button_redSC onClick={()=>turncard3({setCondition,setColor,color:RED})}>Não lembrei</Button_redSC>
+                  <Button_yellowSC  onClick={()=>turncard3({setCondition,setColor,color:YELLOW})}>Quase não lembrei</Button_yellowSC>
+                  <Button_greenSC onClick={()=>turncard3({setCondition,setColor,color:GREEN})}>Zap!</Button_greenSC>
                 </div>
               </Flashcard_answersSC>  
             )}
 
             {condition === "final" && (      
               <Flashcard_finalSC>
-                <p data-test="flashcard-text" style={{color}}>Pergunta {i+1}</p>
-                <img data-test={color === RED ? "no-icon" : color === YELLOW ? "partial-icon": color === GREEN ? "zap-icon" : null} src={color === RED ? icone_erro : color === YELLOW ? icone_quase : color === GREEN ? icone_certo : null} alt= "icone" />
+                <p style={{color}}>Pergunta {i+1}</p>
+                <img src={color === RED ? icone_erro : color === YELLOW ? icone_quase : color === GREEN ? icone_certo : null} alt= "icon" />
               </Flashcard_finalSC>
             )}
 
