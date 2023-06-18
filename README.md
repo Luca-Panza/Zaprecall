@@ -26,7 +26,7 @@
 ***
 ## 🏁 Running the application
 
-This project was initialized with [Vite](https://github.com/vitejs/vite), so make sure you have the latest stable version of [Node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/) running locally, also the project demo is being hosted by [Vercel](https://projeto9-zaprecall-seven-rho.vercel.app/).
+This project was initialized with [Vite](https://github.com/vitejs/vite), so make sure you have the latest stable version of [Node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/) running locally, also the project demo is being hosted with [Vercel](https://projeto9-zaprecall-seven-rho.vercel.app/).
 
 First, clone this repository on your machine:
 
@@ -34,7 +34,7 @@ First, clone this repository on your machine:
 git clone https://github.com/Luca-Panza/projeto9-zaprecall
 ```
 
-Then, inside the folder, where the following command to install the dependencies.
+Then, inside the folder, install the dependencies with the following command.
 
 ```
 npm install
