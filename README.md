@@ -12,7 +12,10 @@
 
 ##  :clipboard: Description
 
-(Driven Bootcamp Project) Flashcards application project, to help the user to memorize information, allowing to study more about jsx.
+Zaprecall is a web-based flashcards application designed for interactive learning and memory enhancement. It combines the use of modern web technologies to create an engaging platform for users to memorize information effectively, with a focus on studying JSX. The application aims to improve user engagement and cognitive skills through tailored recall exercises.
+
+Deployment on Vercel: <a href="https://zaprecall-rose.vercel.app/" target="_blank">ZapRecall</a>
+
 
 ***
 
@@ -26,7 +29,7 @@
 ***
 ## 🏁 Running the application
 
-This project was initialized with [Vite](https://github.com/vitejs/vite), so make sure you have the latest stable version of [Node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/) running locally, also the project demo is being hosted with [Vercel](https://projeto9-zaprecall-seven-rho.vercel.app/).
+This project was initialized with [Vite](https://github.com/vitejs/vite), so make sure you have the latest stable version of [Node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/).
 
 First, clone this repository on your machine:
 
@@ -34,13 +37,19 @@ First, clone this repository on your machine:
 git clone https://github.com/Luca-Panza/projeto9-zaprecall
 ```
 
-Then, inside the folder, install the dependencies with the following command.
+Then, navigate to the project folder and install the dependencies with the following command:
 
 ```
 npm install
 ```
 
 Once the process is finished, just start the server.
+
+```
+npm start
+```
+
+Or to test on a development server.
 
 ```
 npm run dev
